@@ -1,0 +1,33 @@
+﻿@model IEnumerable<app2.comentario>
+
+@{
+    ViewBag.Title = "Index";
+}
+<section class="resume-section p-3 p-lg-5 d-flex flex-column">
+    <h2>Recomendaciones</h2>
+
+    <table class="table">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.nombre)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.recomendacion)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td scope="row">
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.recomendacion)
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Html.ActionLink("Regresar", "Index", "Home")
+</section>
